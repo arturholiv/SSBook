@@ -1,0 +1,35 @@
+.footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #A076F2;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 25px; 
+}
+
+.footer-content {
+    width: 80%;
+    background-color: #A076F2;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 1px 25px; 
+}
+
+.footer-title {
+    color: #fff;
+    background-color: #A076F2;
+
+}
+
+.rights-reserved {
+    color: #fff;
+    background-color: #A076F2;
+    /* margin-right: 35px; */
+}
