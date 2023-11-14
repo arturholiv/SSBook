@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { useParams, Link } from 'react-router-dom';  // Importe o hook useParams e o componente Link
+import { useParams, Link } from 'react-router-dom';
 import { GET_BOOK_DETAILS } from '../../Database/Queries';
+import { BsShareFill, BsFillHeartFill } from 'react-icons/bs';
+import { FiDownload } from 'react-icons/fi';
+import { GiReturnArrow } from 'react-icons/gi';
+import './BookDetails.css';
+
 
 const BookDetails = () => {
-  const { id: bookId } = useParams();  // Use o hook useParams para obter as propriedades de rota
-
+  const { id: bookId } = useParams();
   const { loading, error, data } = useQuery(GET_BOOK_DETAILS, {
     variables: { bookId },
   });
@@ -25,15 +29,20 @@ const BookDetails = () => {
 
   return (
     <div className="book-detail-container">
-      <Link to="/">Voltar</Link> 
-      <h2>Detalhes do Livro</h2>
-      <div>
+      <Link to="/" className="back-link"><GiReturnArrow /></Link>
+      <div className="book-cover-section">
+          <img src={bookDetails.cover} alt={bookDetails.name} />
+          <h3 className='icon-element'><BsFillHeartFill className='icon' />Favoritar</h3>
+          <h3 className='icon-element'><BsShareFill className='icon'/>Compartilhar</h3> 
+          <h3 className='icon-element'><FiDownload className='icon'/>Salvar em uma lista</h3>
+      </div>
+      <div className="book-details-section">
         <h3>{bookDetails.name}</h3>
-        <img src={bookDetails.cover} alt={bookDetails.name} />
-        <p>Autor: {bookDetails.author.name}</p>
-        <p>Ano de Publicação: {bookDetails.year}</p>
-        <p>Categoria: {bookDetails.category}</p>
-        <p>Descrição: {bookDetails.description}</p>
+        <p>{bookDetails.author.name}</p>
+        {/* <p>Ano de Publicação: {bookDetails.year}</p> */}
+        <div className="book-description">
+          <p>{bookDetails.description}</p>
+        </div>  
       </div>
     </div>
   );
