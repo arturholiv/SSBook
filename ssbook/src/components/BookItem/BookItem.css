@@ -39,7 +39,7 @@
     height: auto;
     height: 312px;
     width: 150px;
-
+    max-width: 100%;
   }
 
   .book-item img {

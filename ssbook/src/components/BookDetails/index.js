@@ -4,7 +4,9 @@ import { useParams, Link } from 'react-router-dom';
 import { GET_BOOK_DETAILS } from '../../Database/Queries';
 import { BsShareFill, BsFillHeartFill } from 'react-icons/bs';
 import { FiDownload } from 'react-icons/fi';
-import { GiReturnArrow } from 'react-icons/gi';
+import { MdOutlineArrowBack } from 'react-icons/md';
+import Header from '../Header';
+import Footer from '../Footer';
 import './BookDetails.css';
 
 
@@ -29,21 +31,23 @@ const BookDetails = () => {
 
   return (
     <div className="book-detail-container">
-      <Link to="/" className="back-link"><GiReturnArrow /></Link>
-      <div className="book-cover-section">
-          <img src={bookDetails.cover} alt={bookDetails.name} />
-          <h3 className='icon-element'><BsFillHeartFill className='icon' />Favoritar</h3>
-          <h3 className='icon-element'><BsShareFill className='icon'/>Compartilhar</h3> 
-          <h3 className='icon-element'><FiDownload className='icon'/>Salvar em uma lista</h3>
-      </div>
-      <div className="book-details-section">
-        <h3>{bookDetails.name}</h3>
-        <p>{bookDetails.author.name}</p>
-        {/* <p>Ano de Publicação: {bookDetails.year}</p> */}
-        <div className="book-description">
-          <p>{bookDetails.description}</p>
-        </div>  
-      </div>
+        <Link to="/" className="back-link"><MdOutlineArrowBack className="back"/></Link>
+        <div className="book-cover-section">
+            <img src={bookDetails.cover} alt={bookDetails.name} />
+            <h3 className='icon-element'><BsFillHeartFill className='icon' />Favoritar</h3>
+            <h3 className='icon-element'><BsShareFill className='icon'/>Compartilhar</h3> 
+            <h3 className='icon-element'><FiDownload className='icon'/>Salvar em uma lista</h3>
+        </div>
+        <div className="book-details-section">
+          <h3>{bookDetails.name}</h3>
+          <p>{bookDetails.author.name}</p>
+          {/* <p>Ano de Publicação: {bookDetails.year}</p> */}
+          <div className="book-description">
+            <p>{bookDetails.description}</p>
+          </div>  
+        </div>
+      <Footer/>
+
     </div>
   );
 };

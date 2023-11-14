@@ -19,7 +19,7 @@ const Header = () => {
       <div className="header-buttons">
         <div className='header-icon'><AiFillPlusCircle className='icon'/> Adicionar</div>
         <div className='header-icon'><AiFillHeart className='icon'/> Favoritos</div>
-        <div className="header-icon"><BiSolidUserCircle className='icon-user'/>ArturHoliv</div>
+        <div className="header-icon-user"><BiSolidUserCircle className='icon-user'/>ArturHoliv</div>
       </div>
     </div>
   );

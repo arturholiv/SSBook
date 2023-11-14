@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_FAVORITE_AUTHORS } from '../../Database/Queries';
-import './FavoriteAuthors.css'; // Make sure to import your CSS file
+import './FavoriteAuthors.css';
 
 const FavoriteAuthors = () => {
   const { loading, error, data } = useQuery(GET_FAVORITE_AUTHORS);
